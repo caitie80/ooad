@@ -1,0 +1,42 @@
+@startuml
+skinparam classAttributeIconSize 0
+class zoo.Zoo
+abstract zoo.Animal
+{
+    -age
+    -gender
+    -weight
+
+    +eat()
+    +sleep()
+    +move()
+}
+
+class zoo.Fish
+{
++swim()
+}
+
+class zoo.Bird
+{
+}
+
+class Chicken
+{
+}
+interface Flyable
+{
+    +fly()
+}
+class Sparrow
+{
+    +fly()
+}
+
+zoo.Zoo <|-- zoo.Animal
+zoo.Animal <|-- zoo.Fish
+zoo.Animal <|-- zoo.Bird
+zoo.Bird <|-- Chicken
+zoo.Bird <|-- Sparrow
+Sparrow ..> Flyable
+@enduml
